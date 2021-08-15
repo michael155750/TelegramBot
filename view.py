@@ -1,4 +1,5 @@
-from telegram import KeyboardButton, ReplyKeyboardMarkup, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRemove
+from telegram import KeyboardButton, ReplyKeyboardMarkup, InlineKeyboardButton, InlineKeyboardMarkup, \
+    ReplyKeyboardRemove
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import requests
 from controller import TelegramController
@@ -81,7 +82,8 @@ def received_category(update, context):
 
 def received_result(update, context):
     global STATE
-    try:        category = str(context.user_data['category']).lower()
+    try:
+        category = str(context.user_data['category']).lower()
         address = context.user_data['address'].lower()
         distance = context.user_data['distance'].lower()
 
