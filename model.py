@@ -1,5 +1,5 @@
 from tinydb import TinyDB, Query, table, where
-import tinydb
+
 
 TelegramDBPath = r'C:\Users\elyasaf\PycharmProjects\GitHub\telegrambot-elyasaf-michael\Telegram_Bot_Best_Location\data_9_bot_telegram.json'
 TelegramDBTable = TinyDB(TelegramDBPath)
@@ -30,21 +30,10 @@ class TelegramDBWrapper:
         :param location:
         :param my_number:
         """
-        # if cls.get_by_id(my_number):
-        #     TelegramDBWrapper.update_number(2, '9')
         Telegram_table.insert({'location': location,
                                'category': category,
                                'distance': distance,
                                'results': res})
-
-    # @classmethod
-    # def update_number(cls, my_number: str, new_update_value):
-    #     """
-    #     update Number_of_performances of instance in database
-    #     :param my_number: id of instance
-    #     :param new_update_value: Number_of_performances instance
-    #     """
-    #     Telegram_table.update({'Number_of_performances': new_update_value}, Query().id == str(my_number))
 
     @classmethod
     def get_all(cls) -> None:

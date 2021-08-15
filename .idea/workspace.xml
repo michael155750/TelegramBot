@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c75c7142-382d-4120-b4d2-7e5dcf4db724" name="Default Changelist" comment="secend day">
-      <change afterPath="$PROJECT_DIR$/data_9_bot_telegram.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/telegrambot-elyasaf-michael.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/telegrambot-elyasaf-michael.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main2.py" beforeDir="false" afterPath="$PROJECT_DIR$/main2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_9_bot_telegram.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/key.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Telegram_Bot_Best_Location/key.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp2.py" beforeDir="false" afterPath="$PROJECT_DIR$/tmp2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view2.py" beforeDir="false" afterPath="$PROJECT_DIR$/view2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/view.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,13 +214,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/view.py</url>
-          <line>110</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/view.py</url>
-          <line>88</line>
-          <option name="timeStamp" value="14" />
+          <line>114</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

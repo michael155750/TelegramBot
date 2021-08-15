@@ -21,32 +21,5 @@ class TelegramController:
         creates a new one, and if it does exist it updates it.
         :param my_value: number
         """
-        # x = []
-        # for item in TelegramController.get_by_location_category_distance(location, category, distance, res):
-        #     x += item
-        # if len(x) != 0:
-        #     for item in x:
-        #         if x['category'] == category:
-        #             return
-        # else:
         TelegramDBWrapper.create(location, category, distance, res)
 
-
-    #
-    # @classmethod
-    # def get_most_popular(cls):
-    #     """
-    #     Returns a list of all the numbers the user
-    #     entered the most times
-    #     :return:
-    #     """
-    #     x = 0
-    #     result = []
-    #     for item in TelegramDBWrapper.get_all():
-    #         if x == item['Number_of_performances']:
-    #             result.append(item['id'])
-    #         if x < item['Number_of_performances']:
-    #             x = item['Number_of_performances']
-    #             result.clear()
-    #             result.append(item['id'])
-    #     return result

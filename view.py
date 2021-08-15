@@ -1,5 +1,5 @@
-from telegram import KeyboardButton, ReplyKeyboardMarkup, InlineKeyboardButton, InlineKeyboardMarkup, \
-    ReplyKeyboardRemove
+from telegram import KeyboardButton, ReplyKeyboardMarkup, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRemove
+
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import requests
 from controller import TelegramController
@@ -48,9 +48,6 @@ def received_distance(update, context):
 
     try:
         context.user_data['distance'] = update.message.text
-        # update.message.reply_text(
-        #     f"ok, now I need to know category you want to find...")
-        # markup = types.InlineKeyboardMarkup()
 
         keyboard = [[KeyboardButton("restaurant", callback_data='HElist8'),
                      KeyboardButton("bank", callback_data='HRlist8')],
@@ -114,8 +111,8 @@ def received_result(update, context):
             else:
                 TelegramController.create_new(address, category, distance, result)
                 update.message.reply_text(result)
-
-        update.message.reply_text(resultDB)
+        else:
+            update.message.reply_text(resultDB)
         STATE = None
         # keyboard = [[KeyboardButton("/start", callback_data='HElist8')]]
         # reply_markup = ReplyKeyboardMarkup(keyboard, one_time_keyboard=True)
