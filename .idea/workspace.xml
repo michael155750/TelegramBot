@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c75c7142-382d-4120-b4d2-7e5dcf4db724" name="Default Changelist" comment="secend day">
+      <change afterPath="$PROJECT_DIR$/Telegram_Bot_Best_Location/WeatherKey.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_9_bot_telegram.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Telegram_Bot_Best_Location/key.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Telegram_Bot_Best_Location/data_9_bot_telegram.json" beforeDir="false" afterPath="$PROJECT_DIR$/Telegram_Bot_Best_Location/data_9_bot_telegram.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/view.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,8 +35,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\elyasaf\PycharmProjects\GitHub\telegrambot-elyasaf-michael" />
       <recent name="C:\Users\elyasaf\PycharmProjects\GitHub\telegrambot-elyasaf-michael\Telegram_Bot_Best_Location" />
+      <recent name="C:\Users\elyasaf\PycharmProjects\GitHub\telegrambot-elyasaf-michael" />
       <recent name="C:\Users\elyasaf\PycharmProjects\GitHub\telegrambot-elyasaf-michael\Telegram_Bot_Best_Location\.idea" />
       <recent name="C:\Users\elyasaf\PycharmProjects\GitHub\telegrambot-elyasaf-michael\Telegram_Bot_Best_Location\venv" />
     </key>
@@ -214,8 +212,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/view.py</url>
-          <line>114</line>
-          <option name="timeStamp" value="19" />
+          <line>27</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
