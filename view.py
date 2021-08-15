@@ -1,18 +1,38 @@
+import datetime
+
 from telegram import KeyboardButton, ReplyKeyboardMarkup, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRemove
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import requests
 from controller import TelegramController
 
+
 api_file = open("key.txt", 'r')
 api_key = api_file.read()
 api_file.close()
+
+api_file_weather = open("WeatherKey.txt", 'r')
+weather_key = api_file_weather.read()
+api_file_weather.close()
 
 STATE = None
 LOCATION = 1
 CATEGORY = 2
 DISTANCE = 3
 RESULT = 4
+WEATHER = 5
+
+
+def find_weather(lat, lon):
+    #get place coordinates and return the day with the lowest temprature in the next 5 days
+    weather_exc = "current,minutely,hourly,alerts"
+    url_find_weather = f'https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid=' \
+                       f'{weather_key}&units=metric&exclude={weather_exc}'
+    weather_info = requests.get(url_find_weather).json()
+
+    weather_daily_predict = [(datetime.datetime.fromtimestamp(x["dt"]).day, x["temp"]["day"]) for x in weather_info["daily"]]
+    best_day = min(weather_daily_predict, key=lambda x: x[1])
+    return best_day
 
 
 # function to handle the /start command
@@ -113,13 +133,47 @@ def received_result(update, context):
                 update.message.reply_text(result)
         else:
             update.message.reply_text(resultDB)
-        STATE = None
-        # keyboard = [[KeyboardButton("/start", callback_data='HElist8')]]
-        # reply_markup = ReplyKeyboardMarkup(keyboard, one_time_keyboard=True)
-        # update.message.reply_text(f"ok, now I need to know category you want to find...", reply_markup=reply_markup)
-        # ReplyKeyboardRemove()
+        keyboard = [[KeyboardButton("weather", callback_data='HElist8'),
+                     KeyboardButton("/start", callback_data='HRlist8')]]
+        reply_markup = ReplyKeyboardMarkup(keyboard, one_time_keyboard=True)
+        update.message.reply_text(f"Do you want to know which day of the week is best to go out?\nIf so, "
+                                  f"then press the weather button.\nOtherwise, you can select the Start button",
+                                  reply_markup=reply_markup)
+        ReplyKeyboardRemove()
+        STATE = WEATHER
+        # return_best_day(update, context)
     except:
         update.message.reply_text("Unable to calculate")
+
+
+def return_best_day(update, context):
+    global STATE
+    try:
+
+
+        if update.message.text == "weather":
+            address = context.user_data['address'].lower()
+            url_find_location = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + \
+                                "&key=" + str(api_key)
+            request = requests.get(url_find_location)
+            lat = request.json()["results"][0]["geometry"]["location"]["lat"]
+            lon = request.json()["results"][0]["geometry"]["location"]["lng"]
+            result = find_weather(lat, lon)
+
+            current_day = datetime.datetime.today().day
+            current_month = datetime.datetime.today().month
+
+            if result[0] < current_day:
+                res_month = current_month + 1
+            else:
+                res_month = current_month
+
+            update.message.reply_text(f"The best day to go out is: {result[0]}/{res_month} "
+                                      f"\nAnd the average weather that day is: {result[1]}°C")
+        STATE = None
+    except:
+        update.message.reply_text(
+            "it's funny but it doesn't seem to be correct...")
 
 
 # function to handle normal text
@@ -133,6 +187,8 @@ def text(update, context):
         return received_distance(update, context)
     if STATE == RESULT:
         return received_result(update, context)
+    if STATE == WEATHER:
+        return return_best_day(update, context)
 
 
 def main():
@@ -164,3 +220,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
