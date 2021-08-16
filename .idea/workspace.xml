@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c75c7142-382d-4120-b4d2-7e5dcf4db724" name="Default Changelist" comment="secend day">
-      <change afterPath="$PROJECT_DIR$/Telegram_Bot_Best_Location/WeatherKey.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Telegram_Bot_Best_Location/data_9_bot_telegram.json" beforeDir="false" afterPath="$PROJECT_DIR$/Telegram_Bot_Best_Location/data_9_bot_telegram.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/view.py" afterDir="false" />
@@ -212,8 +211,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/view.py</url>
-          <line>27</line>
-          <option name="timeStamp" value="22" />
+          <line>143</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

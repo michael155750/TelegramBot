@@ -69,12 +69,12 @@ def received_distance(update, context):
     try:
         context.user_data['distance'] = update.message.text
 
-        keyboard = [[KeyboardButton("restaurant", callback_data='HElist8'),
-                     KeyboardButton("bank", callback_data='HRlist8')],
-                    [KeyboardButton("park", callback_data='CClist8'),
-                     KeyboardButton("university", callback_data='SPlist8')],
-                    [KeyboardButton("hotel", callback_data='CFlist8'),
-                     KeyboardButton("museum", callback_data='ALLlist8')]]
+        keyboard = [[KeyboardButton("restaurant", callback_data='restaurant'),
+                     KeyboardButton("bank", callback_data='bank')],
+                    [KeyboardButton("park", callback_data='park'),
+                     KeyboardButton("university", callback_data='university')],
+                    [KeyboardButton("hotel", callback_data='hotel'),
+                     KeyboardButton("museum", callback_data='museum')]]
         reply_markup = ReplyKeyboardMarkup(keyboard, one_time_keyboard=True)
         update.message.reply_text(f"ok, now I need to know category you want to find...", reply_markup=reply_markup)
         ReplyKeyboardRemove()
@@ -89,9 +89,8 @@ def received_category(update, context):
 
     try:
         context.user_data['category'] = update.message.text
-
-        received_result(update, context)
         STATE = RESULT
+        received_result(update, context)
     except:
         update.message.reply_text(
             "it's funny but it doesn't seem to be correct...")
@@ -133,24 +132,24 @@ def received_result(update, context):
                 update.message.reply_text(result)
         else:
             update.message.reply_text(resultDB)
-        keyboard = [[KeyboardButton("weather", callback_data='HElist8'),
-                     KeyboardButton("/start", callback_data='HRlist8')]]
-        reply_markup = ReplyKeyboardMarkup(keyboard, one_time_keyboard=True)
+        STATE = WEATHER
+        keyboard2 = [[KeyboardButton("weather", callback_data='weather'),
+                     KeyboardButton("/start", callback_data='/start')]]
+        reply_markup2 = ReplyKeyboardMarkup(keyboard2, one_time_keyboard=True)
         update.message.reply_text(f"Do you want to know which day of the week is best to go out?\nIf so, "
                                   f"then press the weather button.\nOtherwise, you can select the Start button",
-                                  reply_markup=reply_markup)
+                                  reply_markup=reply_markup2)
         ReplyKeyboardRemove()
-        STATE = WEATHER
         # return_best_day(update, context)
+        # STATE = WEATHER
     except:
         update.message.reply_text("Unable to calculate")
 
 
 def return_best_day(update, context):
     global STATE
+
     try:
-
-
         if update.message.text == "weather":
             address = context.user_data['address'].lower()
             url_find_location = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + \
