@@ -3,9 +3,9 @@ from model import TelegramDBWrapper
 
 class TelegramController:
 
-    @classmethod
-    def get_by_location(cls, locat: str):
-        return TelegramDBWrapper.get_by_location(locat)
+    # @classmethod
+    # def get_by_location(cls, locat: str):
+    #     return TelegramDBWrapper.get_by_location(locat)
 
     @classmethod
     def get_by_location_category_distance(cls, locat: str, category: str, distance:str):
