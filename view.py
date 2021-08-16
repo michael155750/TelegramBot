@@ -208,9 +208,6 @@ def main():
 
     # add an handler for normal text (not commands)
     dispatcher.add_handler(MessageHandler(Filters.text, text))
-    #
-    # # add an handler for errors
-    # dispatcher.add_error_handler(error)
 
     # start your shiny new bot
     updater.start_polling()
