@@ -8,15 +8,6 @@ Telegram_table = TelegramDBTable.table('Telegram')
 
 class TelegramDBWrapper:
 
-    # @classmethod
-    # def get_by_location(cls, locat: str):
-    #     """
-    #     :param my_number: number
-    #     :return: Returns the instance from the database
-    #     """
-    #     q = Query()
-    #     return Telegram_table.search(q.location == locat)
-
     @classmethod
     def get_by_location_category_distance(cls, locat: str, category: str, distance: str):
         q = Query()
